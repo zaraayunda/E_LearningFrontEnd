@@ -10,7 +10,11 @@ import {
 } from 'react-native';
 import { List, Chip } from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useFocusEffect, useRoute, useNavigation } from '@react-navigation/native';
+import {
+  useFocusEffect,
+  useRoute,
+  useNavigation,
+} from '@react-navigation/native';
 import { ipAddress } from '../IpPublic';
 
 export default function TugasScreen() {
@@ -23,13 +27,16 @@ export default function TugasScreen() {
 
   const fetchTugas = async () => {
     const token = await AsyncStorage.getItem('userToken');
+    console.log('TOKEN:', token);
 
     try {
       const response = await fetch(
         `${ipAddress}/tugas/data?kode_matakuliah=${kode_matakuliah}`,
         {
+          method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
+            Accept: 'application/json',
           },
         },
       );
@@ -39,10 +46,12 @@ export default function TugasScreen() {
       if (response.ok) {
         setTugas(json.data);
       } else {
-        Alert.alert('Error', json.message);
+        console.log('STATUS:', response.status);
+        console.log('ERROR:', json);
+        Alert.alert('Error', json.message || 'Gagal mengambil data tugas');
       }
     } catch (e) {
-      console.log(e);
+      console.log('FETCH ERROR:', e);
     } finally {
       setLoading(false);
     }
