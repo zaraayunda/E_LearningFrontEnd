@@ -22,13 +22,16 @@ export default function ModuleScreen() {
 
   const fetchModule = async () => {
     const token = await AsyncStorage.getItem('userToken');
+    console.log('TOKEN:', token);
 
     try {
       const response = await fetch(
         `${ipAddress}/moduls/data?kode_matakuliah=${kode_matakuliah}`,
         {
+          method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
+            Accept: 'application/json',
           },
         },
       );
@@ -38,10 +41,12 @@ export default function ModuleScreen() {
       if (response.ok) {
         setModules(json.data);
       } else {
-        Alert.alert('Error', json.message);
+        console.log('STATUS:', response.status);
+        console.log('ERROR:', json);
+        Alert.alert('Error', json.message || 'Gagal mengambil modul');
       }
     } catch (error) {
-      console.log(error);
+      console.log('FETCH ERROR:', error);
     } finally {
       setLoading(false);
     }
@@ -75,7 +80,6 @@ export default function ModuleScreen() {
         onPress={() => previewFile(item.file_url)}
       />
       <Divider />
-      
     </View>
   );
 
