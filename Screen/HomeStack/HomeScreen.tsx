@@ -114,16 +114,26 @@ export default function HomeScreen({ navigation }) {
                 })
               }
             >
-              {/* Badge kode */}
+              {/* ICON */}
+              <View style={styles.iconWrapper}>
+                <Text style={styles.icon}>📘</Text>
+              </View>
+
+              {/* BADGE KODE */}
               <View style={styles.badge}>
                 <Text style={styles.badgeText}>{item.kode_matakuliah}</Text>
               </View>
 
-              {/* Nama matkul */}
-              <Text style={styles.namaMatkul}>{item.nama_matakuliah}</Text>
+              {/* NAMA MATKUL */}
+              <Text numberOfLines={2} style={styles.namaMatkul}>
+                {item.nama_matakuliah}
+              </Text>
 
-              {/* Footer kecil */}
-              <Text style={styles.subText}>Lihat Modul & Tugas</Text>
+              {/* FOOTER */}
+              <View style={styles.footer}>
+                <Text style={styles.subText}>Modul & Tugas</Text>
+                <Text style={styles.arrow}>›</Text>
+              </View>
             </TouchableOpacity>
           )}
         />
@@ -159,18 +169,10 @@ const styles = StyleSheet.create({
   },
 
   /* CONTENT */
-  content: {
-    padding: 20,
-    marginTop: 10,
-  },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 20,
-  },
-  icon: {
-    fontSize: 32,
-    marginBottom: 8,
   },
   cardText: {
     fontSize: 15,
@@ -188,42 +190,72 @@ const styles = StyleSheet.create({
     color: '#333',
     textAlign: 'center',
   },
+  content: {
+    paddingHorizontal: 12,
+  },
+
   card: {
-    width: CARD_SIZE,
-    height: CARD_SIZE + 20,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 18,
-    padding: 16,
-    justifyContent: 'space-between',
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
+    width: '48%',
+    backgroundColor: '#ffffff',
+    borderRadius: 16,
+    padding: 14,
+    marginBottom: 14,
     elevation: 5,
+    shadowColor: '#1565C0',
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 4 },
+  },
+
+  iconWrapper: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: '#E3F2FD',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  icon: {
+    fontSize: 22,
   },
 
   badge: {
-    alignSelf: 'flex-start',
-    backgroundColor: '#6C9EE5',
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    borderRadius: 20,
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    backgroundColor: '#1565C0',
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    borderRadius: 8,
   },
-
   badgeText: {
-    fontSize: 12,
-    color: '#FFF',
+    color: '#fff',
+    fontSize: 11,
     fontWeight: 'bold',
   },
 
   namaMatkul: {
-    fontSize: 16,
-    fontWeight: '700',
-    color: '#333',
-    marginTop: 10,
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#0D47A1',
+    marginTop: 4,
+    minHeight: 38,
   },
 
+  footer: {
+    marginTop: 8,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   subText: {
     fontSize: 12,
-    color: '#888',
+    color: '#607D8B',
+  },
+  arrow: {
+    fontSize: 18,
+    color: '#1565C0',
+    fontWeight: 'bold',
   },
 });
