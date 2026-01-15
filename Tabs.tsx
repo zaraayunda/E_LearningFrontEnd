@@ -4,7 +4,7 @@ import { useLinkBuilder, useTheme } from '@react-navigation/native';
 import { Text, PlatformPressable } from '@react-navigation/elements';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import StackHome from './Screen/HomeStack/StackHome';
-import StackTugas from './Screen/TugasScreen/StackTugas';
+import StackTodo from './Screen/TodoScreen/StackTodo';
 import StackUser from './Screen/UserStack/StackUser';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -15,13 +15,13 @@ function MyTabBar({ state, descriptors, navigation }) {
 
   const icons = {
     Home: 'home-outline',
-    Tugas: 'document-outline',
+    Todo: 'document-outline',
     User: 'person-outline',
   };
 
   const activeIcons = {
     Home: 'home',
-    Tugas: 'document',
+    Todo: 'document',
     User: 'person',
   };
 
@@ -114,8 +114,8 @@ export default function App() {
         }}
       />
       <Tab.Screen
-        name="Tugas"
-        component={StackTugas}
+        name="Todo"
+        component={StackTodo}
         options={{
           headerShown: false,
           headerTitleStyle: { color: 'white' },
