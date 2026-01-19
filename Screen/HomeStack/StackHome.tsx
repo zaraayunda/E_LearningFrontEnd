@@ -13,7 +13,6 @@ export default function StackHome() {
         component={HomePage}
         options={{ headerShown: false }}
       />
-      {/* UANG MASUK */}
       <Stack.Screen
         name="Matakuliah"
         component={Matakuliah}
@@ -22,7 +21,7 @@ export default function StackHome() {
       <Stack.Screen
         name="PengumpulanTugas"
         component={FormUploadTugas}
-        options={{ headerShown: true, title: 'Detail Matakuliah' }}
+        options={{ headerShown: true, title: 'Detail Pengumpulan Tugas' }}
       />
     </Stack.Navigator>
   );

@@ -64,7 +64,7 @@ export default function UserScreen({ navigation }) {
   if (loading) {
     return (
       <LinearGradient
-        colors={['#3F9AAE', '#f5f5f5']}
+        colors={['#6C9EE5', '#f5f5f5']}
         style={styles.loadingContainer}
       >
         <Text style={styles.loadingText}>Loading...</Text>
@@ -73,7 +73,7 @@ export default function UserScreen({ navigation }) {
   }
 
   return (
-    <LinearGradient colors={['#3F9AAE', '#ffffff']} style={styles.container}>
+    <LinearGradient colors={['#6C9EE5', '#ffffff']} style={styles.container}>
       {/* CARD PROFILE */}
       <View style={styles.card}>
         <TouchableOpacity
@@ -103,7 +103,7 @@ export default function UserScreen({ navigation }) {
 
         {/* LIST INFORMASI */}
         <View style={styles.infoBox}>
-          <InfoItem label="Nama" value={user?.name} />
+          <InfoItem label="Nama" value={mahasiswa?.nama_lengkap} />
           <InfoItem label="Email" value={user?.email} />
           <InfoItem label="Prodi" value={mahasiswa?.prodi} />
           <InfoItem label="Angkatan" value={mahasiswa?.angkatan} />
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     alignItems: 'center',
   },
-  avatar: { borderWidth: 4, borderColor: '#3F9AAE', marginBottom: 14 },
+  avatar: { borderWidth: 4, borderColor: '#6C9EE5', marginBottom: 14 },
   username: { fontSize: 24, fontWeight: '700', color: '#000000' },
   email: { fontSize: 14, color: '#555', marginBottom: 25 },
 
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 9,
   },
-  rowLabel: { fontWeight: 'bold', color: '#3F9AAE' },
+  rowLabel: { fontWeight: 'bold', color: '#6C9EE5' },
   rowValue: { fontWeight: '600', color: '#333' },
   logoutText: { color: 'white', fontWeight: 'bold', marginLeft: 8 },
   actionContainer: {
