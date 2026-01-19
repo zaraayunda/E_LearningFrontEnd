@@ -18,8 +18,9 @@ import { ipAddress, IpSaja } from '../IpPublic';
 const { width } = Dimensions.get('window');
 const CARD_SIZE = (width - 60) / 2;
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({navigation}) {
   const [user, setUser] = useState<any>(null);
+  const [mahasiswa, setMahasiswa] = useState<any>(null);
   const [matkul, setMatkul] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -69,6 +70,7 @@ export default function HomeScreen({ navigation }) {
 
       if (response.ok) {
         setUser(data.user);
+        setMahasiswa(data.mahasiswa);
       } else {
         Alert.alert('Erroras', data.message || 'Failed to fetch user data');
         navigation.replace('Login');
@@ -91,7 +93,7 @@ export default function HomeScreen({ navigation }) {
       {/* HEADER */}
       <View style={styles.header}>
         <Text style={styles.welcomeText}>Selamat Datang 👋</Text>
-        <Text style={styles.userText}>{user?.name}</Text>
+        <Text style={styles.userText}>{mahasiswa?.nama_lengkap}</Text>
       </View>
 
       {/* CONTENT */}

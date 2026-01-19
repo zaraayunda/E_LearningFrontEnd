@@ -44,7 +44,7 @@ const LoginForm = ({ navigation }) => {
 
         <Input
           placeholder="Email"
-          leftIcon={<Ionicons name="mail-outline" size={20} color="#3F9AAE" />}
+          leftIcon={<Ionicons name="mail-outline" size={20} color="#6C9EE5" />}
           value={email}
           onChangeText={setEmail}
           autoCapitalize="none"
@@ -56,7 +56,7 @@ const LoginForm = ({ navigation }) => {
         <Input
           placeholder="Password"
           leftIcon={
-            <Ionicons name="lock-closed-outline" size={20} color="#3F9AAE" />
+            <Ionicons name="lock-closed-outline" size={20} color="#6C9EE5" />
           }
           value={password}
           secureTextEntry
@@ -76,7 +76,7 @@ const LoginForm = ({ navigation }) => {
         </TouchableOpacity>
 
         <Text style={styles.register}>
-          Belum punya akun? Silahkan kunjungi situs web.
+          Belum punya akun? Silahkan kunjungi situs website akademik.
         </Text>
       </View>
     </View>
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: '800',
     textAlign: 'center',
-    color: '#3F9AAE',
+    color: '#6C9EE5',
     marginBottom: 4,
   },
   subtitle: {
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   },
   inputBox: {
     borderBottomWidth: 1.3,
-    borderColor: '#3F9AAE',
+    borderColor: '#6C9EE5',
     paddingBottom: 4,
   },
   inputText: {
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     marginLeft: 6,
   },
   button: {
-    backgroundColor: '#3F9AAE',
+    backgroundColor: '#6C9EE5',
     paddingVertical: 14,
     borderRadius: 10,
     marginTop: 5,
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
   },
   registerBold: {
     fontWeight: 'bold',
-    color: '#3F9AAE',
+    color: '#6C9EE5',
   },
 });
 
